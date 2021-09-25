@@ -1,2 +1,2 @@
 # PostgreSQL-Course
-Assignments for PostgreSQL Course
+Working folder for PostgreSQL Course
