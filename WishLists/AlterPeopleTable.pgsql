@@ -1,0 +1,4 @@
+ALTER TABLE "People"
+    ADD COLUMN "peopleNameLast" VARCHAR(50) NOT NULL,
+    ADD COLUMN "peopleCity" VARCHAR(50) NOT NULL,
+    ADD COLUMN "peopleState" VARCHAR(2) NOT NULL;
