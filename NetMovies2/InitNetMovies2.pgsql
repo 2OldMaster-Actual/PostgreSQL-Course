@@ -1,3 +1,5 @@
+-- Database "NetMovies2" Initialize
+
 -- CREATE DATABASE NetMovies2;
 
 DROP TABLE IF EXISTS customers CASCADE;

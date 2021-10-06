@@ -1,0 +1,17 @@
+-- #1 Select Distinct Cities. Order Alphabetically.
+SELECT DISTINCT "pCity" FROM "People" ORDER BY "pCity" ASC;
+
+-- #2 Repeat #1. Name Column "Towns".
+SELECT DISTINCT "pCity" AS "Towns" FROM "People" ORDER BY "pCity" ASC;
+
+-- #3 Combine First & Last Name Fields. Name Column "Full Name". Order by Last Name.
+SELECT "nameFirst" || '' || "nameLast" AS "Full Name" from "People" ORDER BY "nameLast";
+
+-- #4 Select City & State In One Column called "Towns". Insert "has the city" inbetween. Order by State ASC, City DESC.
+SELECT "pState" || ' has the city ' || "pCity" AS "Towns" FROM "People" ORDER BY "pState" ASC, "pCity" DESC;
+
+-- #5 Calculate Number of Items Desired In Column Called "Items Still Desired"
+SELECT "listItemDesired" - "listItemReceived" AS "Items Still Desired" FROM "ListItems";
+
+-- #6 Calculate Percentage of Desired Items Purchased
+SELECT ROUND (1 - CAST("listItemDesired" - "listItemReceived" AS NUMERIC)/"listItemDesired", 2) AS "Fulfillment" FROM "ListItems";

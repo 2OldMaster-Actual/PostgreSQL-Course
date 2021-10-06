@@ -1,0 +1,1 @@
+Exercise Set consists of sketching diagrams of tables in a database.

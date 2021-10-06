@@ -1,0 +1,59 @@
+-- #1 Create Database "Customers", Insert Data, Verify Data.
+
+CREATE DATABASE "Customers"(
+    custID SMALLSERIAL PRIMARY KEY,
+    nameFirst VARCHAR(20) NOT NULL,
+    nameLast VARCHAR(50) NOT NULL
+);
+
+INSERT INTO "Customers" (nameFirst, nameLast)
+    VALUES ('Harry', 'Potter'), ('Ronald', 'Weasley'), ('Hermoine', 'Granger');
+
+SELECT * FROM "Customers";
+
+
+-- #2 Create Table "Phone Number" Using Constraints
+
+CREATE TABLE "Phone Number"(
+    phID SMALLSERIAL PRIMARY KEY,
+    custID INT REFERENCES "Customers"(custID),
+    phNum VARCHAR(20) UNIQUE NOT NULL
+);
+
+
+
+-- #3 Verify Constraints Used in Table "Phone Numbers"
+
+INSERT INTO "Phone Number" (custID, phNum)
+    VALUES (1, Null);
+    -- Verifies NOT NULL constraint in phNum field
+
+INSERT INTO "Phone Number" (custID, phNum)
+    VALUES (1, 555-555-5555), (2. 555-555-5555);
+    -- Verified UNIQUE constraint in phNum field
+
+
+INSERT INTO "Phone Number" (custID, phNum)
+    VALUES (100, 555-555-5550);
+    -- Verifies REFERENCES constraint in custID field
+
+
+
+-- #4 Create Table "Movies" Using CHECK Constraint. Verify CHECK.
+    movID SERIAL PRIMARY KEY,
+    movName VARCHAR(20) UNIQUE NOT NULL,
+    movCost NUMERIC(6,2) NOT NULL CHECK(movCost > 0)
+);
+
+INSERT INTO "Movies" (movName, movCost)
+    VALUES ('Hackers',9999.99), ('War Games', 15.00), ('Sneakers', 0);
+    -- CHECK will allow the movies Hackers and War Games, but not Sneakers to be added to the table
+
+
+
+-- #5 Create Table "Transactions" to Track Movie Rentals
+CREATE TABLE "Transactions"(
+    tID SERIAL PRIMARY KEY,
+    custID INT REFERENCES "Customers",
+    movID INT REFERENCES "Movies"
+);

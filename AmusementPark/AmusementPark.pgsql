@@ -1,4 +1,6 @@
-CREATE DATABASE "Amustment Park";
+-- Initialize Database "Amusement Park"
+
+-- CREATE DATABASE "Amustment Park";
 
 CREATE TABLE "Rides"(
 

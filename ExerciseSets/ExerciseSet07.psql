@@ -1,0 +1,18 @@
+-- #1 Select Name & Points. Cast Points As Text. Order Points Desc.
+SELECT CAST(nameFirst || '' || nameLast || '' || pPoints AS TEXT) AS "Customer Points" FROM "People" ORDER BY "pPoints" DESC;
+
+-- #2 Select Name & Return Current Age.
+SELECT nameFirst || '' || nameLast || ' is ' || EXTRACT(YEAR FROM CURRENT_DATE) - EXTRACT( YEAR FROM dob) || ' years old.' AS "Age" FROM "People" ORDER BY "dob" ASC;
+
+-- #3 Return pID As Types INT, NUMERIC, TEXT In Sepeate Columns
+SELECT CAST (pID AS INT), CAST (pID AS NUMERIC), CAST (pID AS TEXT) FROM "People";
+
+-- #4 Math with SQL
+SELECT 2^8;
+SELECT 1000/150;
+SELECT 1000%150;
+SELECT 400/34.3;
+SELECT 400%34.3;
+SELECT ROUND(400/34.3, 4)
+    SELECT CAST (400/34.3 AS NUMERIC(6,4));
+SELECT CAST (85 > 64 AS BOOLEAN);

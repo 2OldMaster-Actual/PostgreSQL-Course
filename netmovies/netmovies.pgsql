@@ -1,4 +1,6 @@
-CREATE DATABASE "netmovies";
+-- Initialize Database "netmovies"
+
+-- CREATE DATABASE "netmovies";
 
 CREATE TABLE "CUSTOMERS"(
 	custID SMALLSERIAL PRIMARY KEY,

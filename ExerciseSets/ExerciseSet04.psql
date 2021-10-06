@@ -1,0 +1,26 @@
+-- #1 Create Database Bikestore w/ Table Customers
+
+-- CREATE DATABASE "BikeStore";
+CREATE TABLE "Customers"(
+    custID SMALLSERIAL PRIMARY KEY,
+    nameFirst varchar(20) NOT NULL,
+    nameLast varchar(20) NOT NULL,
+    favColor varchar(15)
+);
+
+-- #2 Create Database Amustment Park w/ Table Visitors
+
+-- CREATE DATABASE "Amusement Park";
+CREATE TABLE "Visitors"(
+    visID SMALLSERIAL PRIMARY KEY,
+    dob DATE NOT NULL,
+    favPie TEXT NOT NULL,
+)
+
+-- #3 Drop both Databases after dropping their Tables
+
+DROP TABLE "Customers";
+-- DROP DATABASE "BikeStore";
+
+DROP TABLE "Visitors";
+-- DROP DATABASE "Amusement Park";

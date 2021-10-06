@@ -1,4 +1,6 @@
--- CREATE DATABASE wishlists; Renamed to WishLists2;
+-- Initialize Database "WishLists2"
+
+-- CREATE DATABASE "WishLists2";
 
 DROP TABLE IF EXISTS listitems;
 DROP TABLE IF EXISTS items;

@@ -1,4 +1,6 @@
-CREATE DATABASE "BikeStore";
+-- Initialize Database "BikeStore"
+
+-- CREATE DATABASE "BikeStore";
 
 CREATE TABLE "Customers"(
 	custID SMALLSERIAL PRIMARY KEY.

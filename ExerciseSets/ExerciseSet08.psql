@@ -1,0 +1,9 @@
+-- #1 Select Names & Favorites. Select Only Desserts From Favorites.
+SELECT nameFirst, pfavorites -> 'Desserts' AS "Desserts" FROM "People";
+
+-- #2 Check If Favorite Desserts Include Cake. With & Without Accessing Operator.
+SELECT pfavorites -> 'Desserts' @> CAST ('{"cake"}' AS JSONB) FROM "People";
+SELECT pfavorites @> CAST('{"Desserts":"cake"}' AS JSONB) FROM "People";
+
+-- #3 Check If Favorite Desserts Include Ice Cream With Existence Operator
+SELECT nameFirst, pfavorites -> 'Desserts' ? 'ice cream' AS "<3 Ice Cream" FROM "People" ORDER BY "<3 Ice Cream" DESC;

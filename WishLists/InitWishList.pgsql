@@ -1,3 +1,7 @@
+-- Initialize Database "WishLists"
+
+-- CREATE DATABASE "WishLists";
+
 CREATE TABLE "People"(
     peopleID SMALLSERIAL PRIMARY KEY,
     peopleName VARCHAR (50) NOT NULL
