@@ -2,9 +2,13 @@
 -- SELECT pfirstname, plastname, ppoints FROM people WHERE ppoints > (SELECT AVG(ppoints) FROM people) ORDER BY ppoints DESC;
 -- SELECT COUNT(*) FROM people WHERE ppoints > (SELECT AVG(ppoints) FROM people);
 
+
 -- #2 Return name and number of lists each person has ordered desc by list amnt
-SELECT pfirstname, (SELECT COUNT(lists.lid) FROM lists WHERE lists.pid = people.pid) as "Lists" from people ORDER BY "Lists" DESC;
+-- SELECT pfirstname, (SELECT COUNT(lists.lid) FROM lists WHERE lists.pid = people.pid) as "Lists" from people ORDER BY "Lists" DESC;
 
 
 -- #3 Return name and number of listitems each person has, filtering out those with fewer than 2 listitems
+-- SELECT pfirstname, (SELECT COUNT(*) FROM listitems) FROM people;
+-- People.pid = Lists.pid to Lists.lid = listitems.lid to COUNT listitems.iid
+-- SELECT (SELECT DISTINCT (pfirstname || ' ' || plastname) AS "Name"), (SELECT COUNT(*) FROM listitems WHERE listitems.lid = lists.lid) AS "Items" FROM people JOIN lists USING (pid) WHERE ((SELECT COUNT(*) FROM listitems WHERE listitems.lid = lists.lid) > 1) ORDER BY "Items" DESC, "pfirstname" ASC;
 
