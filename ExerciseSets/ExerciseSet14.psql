@@ -1,9 +1,9 @@
 -- #1 Return name and ppoints of those with above average points. Also return count of those with above agerave points
--- SELECT pfirstname, plastname, ppoints FROM people;
-SELECT pfirstname, plastname, ppoints FROM people WHERE ppoints > (SELECT AVG(ppoints) FROM people) ORDER BY ppoints DESC;
-SELECT COUNT(*) FROM people WHERE ppoints > (SELECT AVG(ppoints) FROM people);
+-- SELECT pfirstname, plastname, ppoints FROM people WHERE ppoints > (SELECT AVG(ppoints) FROM people) ORDER BY ppoints DESC;
+-- SELECT COUNT(*) FROM people WHERE ppoints > (SELECT AVG(ppoints) FROM people);
 
 -- #2 Return name and number of lists each person has ordered desc by list amnt
+SELECT pfirstname, (SELECT COUNT(lists.lid) FROM lists WHERE lists.pid = people.pid) as "Lists" from people ORDER BY "Lists" DESC;
 
 
 -- #3 Return name and number of listitems each person has, filtering out those with fewer than 2 listitems
